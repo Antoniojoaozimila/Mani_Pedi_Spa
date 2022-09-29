@@ -7,6 +7,7 @@ package View;
 
 import DAO.DAO;
 import Model.Trabalhador;
+import java.awt.Color;
 import java.awt.Dimension;
 import static java.awt.Frame.MAXIMIZED_BOTH;
 import java.awt.Toolkit;
@@ -113,6 +114,7 @@ public class Cadastro extends javax.swing.JInternalFrame {
         jTextField5 = new javax.swing.JTextField();
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         setClosable(true);
         setIconifiable(true);
@@ -138,6 +140,8 @@ public class Cadastro extends javax.swing.JInternalFrame {
         ));
         jScrollPane1.setViewportView(jTable1);
 
+        jPanel2.setBackground(new java.awt.Color(255, 102, 102));
+
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel1.setText("NOME:");
 
@@ -159,6 +163,14 @@ public class Cadastro extends javax.swing.JInternalFrame {
         jButton3.setBackground(new java.awt.Color(0, 255, 0));
         jButton3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton3.setText("SALVAR");
+        jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jButton3MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jButton3MouseExited(evt);
+            }
+        });
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
@@ -168,13 +180,21 @@ public class Cadastro extends javax.swing.JInternalFrame {
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel2.setText("PESQUISAR:");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione uma opção", "item1", "item2" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione uma opção", "GLOW HAIR, Lda", "GLOW, Lda", "SEM CONTRATO" }));
 
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione uma opção", "INDETERMINADO", "TEMPORARIO" }));
 
         jButton4.setBackground(new java.awt.Color(102, 255, 102));
         jButton4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton4.setText("EDITAR");
+        jButton4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jButton4MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jButton4MouseExited(evt);
+            }
+        });
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
@@ -184,9 +204,25 @@ public class Cadastro extends javax.swing.JInternalFrame {
         jButton5.setBackground(new java.awt.Color(255, 51, 51));
         jButton5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton5.setText("REMOVER");
+        jButton5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jButton5MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jButton5MouseExited(evt);
+            }
+        });
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton5ActionPerformed(evt);
+            }
+        });
+
+        jButton1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jButton1.setText("REPOR");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
             }
         });
 
@@ -238,6 +274,10 @@ public class Cadastro extends javax.swing.JInternalFrame {
                             .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap())
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -268,11 +308,13 @@ public class Cadastro extends javax.swing.JInternalFrame {
                         .addGap(6, 6, 6)
                         .addComponent(jLabel7))
                     .addComponent(jDateChooser2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jTextField5)
                     .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(56, 56, 56)
+                .addGap(22, 22, 22)
+                .addComponent(jButton1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -287,8 +329,8 @@ public class Cadastro extends javax.swing.JInternalFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 596, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 567, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
                 .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(0, 0, 0))
         );
@@ -321,15 +363,23 @@ public class Cadastro extends javax.swing.JInternalFrame {
     contrato="";
     dataInicio="";
     dataFim="";
-    dt =new SimpleDateFormat("dd-MM-yyyy");
-    dataInicio=(String) dt.format(jDateChooser1.getDate());
-    dataFim=(String) dt.format(jDateChooser2.getDate());
+    
     empresa = jComboBox1.getSelectedItem().toString();
-    contrato = jComboBox1.getSelectedItem().toString();
+    contrato =jComboBox2.getSelectedItem().toString();
+  
+   if(contrato.equalsIgnoreCase("INDETERMINADO")){
+     dataInicio="";
+     dataFim="";
+   }else{
+   dt =new SimpleDateFormat("dd-MM-yyyy");
+   dataInicio=dt.format(jDateChooser1.getDate());
+   dataFim=dt.format(jDateChooser2.getDate());  
+   }
+   
     if(empresa.equalsIgnoreCase("selecione uma opção")&&contrato.equalsIgnoreCase("selecione uma opção")){
    JOptionPane.showMessageDialog(null,"Preencha a caixa em falta...");
-    }
-    Trabalhador tc = new Trabalhador(nome, empresa, funcao,contrato,dataInicio,dataFim);
+    }else{
+        Trabalhador tc = new Trabalhador(nome, empresa, funcao,contrato,dataInicio,dataFim);
         try {
             DAO.guardar(tc);
         } catch (ClassNotFoundException ex) {
@@ -345,28 +395,29 @@ public class Cadastro extends javax.swing.JInternalFrame {
         jTextField2.setText("");
         //posicioona o cursor no primeiro campo apos o cadastro
         jTextField1.requestFocus();
+    }
+    
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
  if (jTable1.getSelectedRow() != -1) {
     int id = (int) jTable1.getValueAt(jTable1.getSelectedRow(), 0);
-    nome=jTextField1.getText();
+    nome=jTextField1.getText().toUpperCase();
     empresa="";
-    funcao=jTextField2.getText();
+    funcao=jTextField2.getText().toUpperCase();
     contrato="";
-    dataInicio="";
-    dataFim="";
+    dataInicio=null;
+    dataFim=null;
     dt =new SimpleDateFormat("dd-MM-yyyy");
-    dataInicio=(String) dt.format(jDateChooser1.getDate());
-    dataFim=(String) dt.format(jDateChooser2.getDate());
+    dataInicio=dt.format(jDateChooser1.getDate());
+    dataFim=dt.format(jDateChooser2.getDate());
     empresa = jComboBox1.getSelectedItem().toString();
-    contrato = jComboBox1.getSelectedItem().toString();
+    contrato = jComboBox2.getSelectedItem().toString();
     if(empresa.equalsIgnoreCase("selecione uma opção")&&contrato.equalsIgnoreCase("selecione uma opção")){
      JOptionPane.showMessageDialog(null,"Preencha a caixa em falta...");
     }else{
     Trabalhador tc = new Trabalhador(id,nome, empresa, funcao,contrato,dataInicio,dataFim);
-         }
-    try {
+      try {
     DAO.atualizar(tc);
      } catch (ClassNotFoundException ex){
     Logger.getLogger(Cadastro.class.getName()).log(Level.SEVERE, null, ex);
@@ -381,11 +432,12 @@ public class Cadastro extends javax.swing.JInternalFrame {
       jTable1.setValueAt(dataInicio, linhaAt, 5);
       jTable1.setValueAt(dataFim, linhaAt, 6);
       }
-    //limpar campos apos Atualizacao
+        //limpar campos apos Atualizacao
     jTextField1.setText("");
     jTextField2.setText("");
     //posicioona o cursor no primeiro campo apos o cadastro
     jTextField1.requestFocus();
+    }
    }else{
     JOptionPane.showMessageDialog(null,"Selecione a linha que pretende editar...");
    }     
@@ -414,11 +466,59 @@ public class Cadastro extends javax.swing.JInternalFrame {
         int selecionado = jTable1.getSelectedRow();
         jTextField1.setText((String) jTable1.getValueAt(selecionado, 1));
         jTextField2.setText((String) jTable1.getValueAt(selecionado, 3));
-        jDateChooser1.setDateFormatString((String) jTable1.getValueAt(selecionado, 5));
-        jDateChooser2.setDateFormatString((String) jTable1.getValueAt(selecionado, 6));
+       
     }//GEN-LAST:event_jScrollPane1MouseClicked
 
+    private void jButton3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseEntered
+        // TODO add your handling code here:
+        jButton3.setBackground(Color.white);
+        jButton3.setForeground(Color.BLACK);
+    }//GEN-LAST:event_jButton3MouseEntered
+
+    private void jButton3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseExited
+        // TODO add your handling code here:
+        jButton3.setBackground(new Color(0, 255, 0));
+        jButton3.setForeground(Color.BLACK);
+    }//GEN-LAST:event_jButton3MouseExited
+
+    private void jButton4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseEntered
+        // TODO add your handling code here:
+        jButton4.setBackground(Color.white);
+        jButton4.setForeground(Color.BLACK);
+    }//GEN-LAST:event_jButton4MouseEntered
+
+    private void jButton4MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseExited
+        // TODO add your handling code here:
+        jButton4.setBackground(new Color(102, 255, 102));
+        jButton4.setForeground(Color.BLACK);
+    }//GEN-LAST:event_jButton4MouseExited
+
+    private void jButton5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseEntered
+        // TODO add your handling code here:
+        jButton5.setBackground(Color.white);
+        jButton5.setForeground(Color.BLACK);
+    }//GEN-LAST:event_jButton5MouseEntered
+
+    private void jButton5MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseExited
+        // TODO add your handling code here:
+        jButton5.setBackground(new Color(255, 51, 51));
+        jButton5.setForeground(Color.BLACK);
+    }//GEN-LAST:event_jButton5MouseExited
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+         //limpar campos apos Cadastro
+        jTextField1.setText("");
+        jTextField2.setText("");
+        jDateChooser1.setDate(null);
+        jDateChooser2.setDate(null);
+        //posicioona o cursor no primeiro campo apos o cadastro
+        jTextField1.requestFocus();
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;

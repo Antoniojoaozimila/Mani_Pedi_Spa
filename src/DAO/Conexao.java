@@ -17,17 +17,16 @@ import javax.swing.JOptionPane;
  */
 public class Conexao {
     public static java.sql.Connection getConexao() throws ClassNotFoundException{
-    
-    String URL   ="jdbc:mysql://sql5.freesqldatabase.com/sql5521610";
-    String user  ="sql5521610";
-    String senha ="gHVxaru9hb";
+    String URL   ="jdbc:mysql://localhost:3306/processos_cdevcm";
+  //String URL   ="jdbc:mysql://sql5.freesqldatabase.com/sql5521610";
+    String user  ="root";
+    String senha ="";
     try {
         Class.forName("com.mysql.cj.jdbc.Driver");
         java.sql.Connection conection =DriverManager.getConnection(URL,user,senha);
-        System.out.println(conection);
         return conection;
     } catch (SQLException ex) {
-        JOptionPane.showMessageDialog(null,"Conexão falhou, por favor ligue a internet.");
+   JOptionPane.showMessageDialog(null,"Conexão falhou, por favor ligue a internet. "+ex);
     }
     return null;
 }

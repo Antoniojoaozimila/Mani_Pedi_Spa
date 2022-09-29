@@ -52,10 +52,8 @@ public class Tela_Principal extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(0, 51, 51));
 
-        rSButtonMetro1.setBackground(new java.awt.Color(0, 51, 51));
-        rSButtonMetro1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         rSButtonMetro1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Assets/add.png"))); // NOI18N
-        rSButtonMetro1.setText("REGISTRAR");
+        rSButtonMetro1.setToolTipText("Click para Registrar Trabalhadores.");
         rSButtonMetro1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 rSButtonMetro1MouseExited(evt);
@@ -67,20 +65,16 @@ public class Tela_Principal extends javax.swing.JFrame {
             }
         });
 
-        rSButtonMetro2.setBackground(new java.awt.Color(0, 51, 51));
-        rSButtonMetro2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         rSButtonMetro2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Assets/list.png"))); // NOI18N
-        rSButtonMetro2.setText("LISTAR");
+        rSButtonMetro2.setToolTipText("Click para ver todos Trabalhadores");
         rSButtonMetro2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 rSButtonMetro2ActionPerformed(evt);
             }
         });
 
-        rSButtonMetro3.setBackground(new java.awt.Color(0, 51, 51));
-        rSButtonMetro3.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         rSButtonMetro3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Assets/out.png"))); // NOI18N
-        rSButtonMetro3.setText("SAIR");
+        rSButtonMetro3.setToolTipText("Click para Sair");
         rSButtonMetro3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 rSButtonMetro3ActionPerformed(evt);
@@ -104,13 +98,13 @@ public class Tela_Principal extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(53, 53, 53)
                 .addComponent(rSButtonMetro1, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(rSButtonMetro2, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(rSButtonMetro3, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(164, Short.MAX_VALUE))
+                .addContainerGap(129, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);

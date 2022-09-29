@@ -25,7 +25,7 @@ public class DAO {
     Statement stmt = conn.createStatement();
 
        //String sqlSaver="INSERT INTO `processos_cdevcm`.`Trabalhador` (`id`, `Nome`, `Sector`, `Actividade`) VALUES ('"+t.getId()+"', '"+t.getNome()+"', '"+t.getLocalTrabalho()+"','"+t.getActividade()+"');";
-       String sqlSaver="INSERT INTO `sql5521610`.`Trabalhador2` (`Nome`, `Empresa`, `Funcao`,`Contrato`,`inicio`,`fim`) VALUES ('"+t.getNome()+"', '"+t.getEmpresa()+"','"+t.getFuncao()+"','"+t.getContrato()+"','"+t.getDataInicio()+"','"+t.getDataFim()+"');";
+       String sqlSaver="INSERT INTO `processos_cdevcm`.`Trabalhador2` (`Nome`, `Empresa`, `Funcao`,`Contrato`,`inicio`,`fim`) VALUES ('"+t.getNome()+"', '"+t.getEmpresa()+"','"+t.getFuncao()+"','"+t.getContrato()+"','"+t.getDataInicio()+"','"+t.getDataFim()+"');";
              stmt.executeUpdate(sqlSaver);
             
             Conexao.close(conn,stmt);
@@ -39,7 +39,7 @@ public class DAO {
      
        public static List<Trabalhador> selecTudo() throws ClassNotFoundException{
         java.sql.Connection conn = Conexao.getConexao();
-        String sqlSaver="SELECT * FROM `sql5521610`.`Trabalhador2`";
+        String sqlSaver="SELECT * FROM `processos_cdevcm`.`Trabalhador2`";
       
        List<Trabalhador> t = new ArrayList<>();
         try {
@@ -58,7 +58,7 @@ public class DAO {
     }
         public static void deletar(Trabalhador t) throws ClassNotFoundException{
      try {
-          String sqlSaver="DELETE FROM `sql5521610`.`Trabalhador2` WHERE (`id` = '"+t.getId()+"');";
+          String sqlSaver="DELETE FROM `processos_cdevcm`.`Trabalhador2` WHERE (`id` = '"+t.getId()+"');";
           java.sql.Connection conn = Conexao.getConexao();
        
             Statement stmt = conn.createStatement();
@@ -71,7 +71,7 @@ public class DAO {
     }
         public static void atualizar(Trabalhador t) throws ClassNotFoundException{
           try {
-       String sqlSaver="UPDATE `sql5521610`.`Trabalhador2` SET `Nome` = '"+t.getNome()+"',`Empresa` = '"+t.getEmpresa()+"',`Funcao` = '"+t.getFuncao()+"',`Contrato`='"+t.getContrato()+"',`Inicio` = '"+t.getDataInicio()+"',`Fim` = '"+t.getDataFim()+"' WHERE `id` = '"+t.getId()+"';";
+       String sqlSaver="UPDATE `processos_cdevcm`.`Trabalhador2` SET `Nome` = '"+t.getNome()+"',`Empresa` = '"+t.getEmpresa()+"',`Funcao` = '"+t.getFuncao()+"',`Contrato`='"+t.getContrato()+"',`Inicio` = '"+t.getDataInicio()+"',`Fim` = '"+t.getDataFim()+"' WHERE `id` = '"+t.getId()+"';";
         java.sql.Connection conn = Conexao.getConexao();
         Statement stmt = conn.createStatement();
         stmt.executeUpdate(sqlSaver);
